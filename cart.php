@@ -1,15 +1,15 @@
 <?php
 session_start();
-include('db.php'); // Povezivanje s bazom
+include('db.php'); 
 
-// Provjera postojanja košarice u sessionu
+
 if (!empty($_SESSION["shopping_cart"])) {
   $cartItems = $_SESSION["shopping_cart"];
 } else {
   $cartItems = array();
 }
 
-// Kod za spajanje istih proizvoda
+
 $mergedCart = array();
 foreach ($_SESSION["shopping_cart"] as $item) {
   $code = $item['code'];
@@ -155,7 +155,7 @@ $_SESSION["shopping_cart"] = $mergedCart;
       const phoneInput = document.getElementById('phone');
 
       if (nameInput.value && emailInput.value && addressInput.value && phoneInput.value) {
-        // Redirect to placeorder.php
+       
         window.location.href = 'placeorder.php';
       } else {
         alert('Please fill in all the fields before placing the order.');
@@ -167,7 +167,7 @@ $_SESSION["shopping_cart"] = $mergedCart;
 </html>
 
 <?php
-// Funkcija za izračun ukupne cijene košarice
+
 function calculateTotalPrice($cartItems) {
   $totalPrice = 0;
   foreach ($cartItems as $item) {

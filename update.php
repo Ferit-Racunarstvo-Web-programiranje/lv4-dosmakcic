@@ -1,40 +1,39 @@
 <?php
 include 'db.php';
 
-// Provjera je li proizvod za ažuriranje poslan putem GET parametra
+
 if (isset($_GET['id'])) {
     $productId = $_GET['id'];
 
-    // Dohvaćanje podataka o odabranom proizvodu iz baze
+   
     $query = "SELECT * FROM products WHERE id = '$productId'";
     $result = mysqli_query($con, $query);
     $product = mysqli_fetch_assoc($result);
 }
 
-// Ažuriranje proizvoda
+
 if (isset($_POST['update'])) {
-    // Dohvaćanje novih podataka iz forme
+   
     $newName = $_POST['name'];
     $newCode = $_POST['code'];
     $newPrice = $_POST['price'];
     $newQuantity = $_POST['quantity'];
 
-    // Ažuriranje podataka u bazi
+ 
     $query = "UPDATE products SET name='$newName', code='$newCode', price='$newPrice', quantity='$newQuantity' WHERE id='$productId'";
     mysqli_query($con, $query);
 
-    // Preusmjeravanje na products.php nakon ažuriranja
     header('Location: products.php');
     exit();
 }
 
-// Brisanje proizvoda
+
 if (isset($_POST['delete'])) {
-    // Brisanje odabranog proizvoda iz baze
+  
     $query = "DELETE FROM products WHERE id = '$productId'";
     mysqli_query($con, $query);
 
-    // Preusmjeravanje na products.php nakon brisanja
+    
     header('Location: products.php');
     exit();
 }
@@ -43,7 +42,7 @@ if (isset($_POST['delete'])) {
      <head>
         <title>Update</title>
         <style>
-            /* CSS za update.php */
+         
 
 body {
   font-family: Arial, sans-serif;

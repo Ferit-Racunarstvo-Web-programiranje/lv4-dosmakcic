@@ -1,16 +1,15 @@
 <?php
 session_start();
-include('db.php'); //povezivanje s bazom
+include('db.php'); 
 $status = "";
 
-// Check if the "Remove" button is clicked
+
 if (isset($_POST['remove_item_key']) && !empty($_SESSION['shopping_cart'])) {
   $removeKey = $_POST['remove_item_key'];
 
-  // Remove the item from the shopping cart session
+
   unset($_SESSION['shopping_cart'][$removeKey]);
 
-  // Show a success message or perform any other action
   $status = "<div class='box'>Product removed from your cart!</div>";
 }
 
@@ -144,9 +143,9 @@ if (isset($_POST['code']) && $_POST['code'] != "") {
       <h2>Cart</h2>
       <ul class="cart-items">
         <?php
-        // Check if cart items exist in session
+       
         if (!empty($_SESSION['shopping_cart'])) {
-          $total = 0; // Initialize total variable
+          $total = 0; 
 
           foreach ($_SESSION['shopping_cart'] as $item_key => $item) {
             echo '<li class="cart-item">';
@@ -159,7 +158,7 @@ if (isset($_POST['code']) && $_POST['code'] != "") {
             echo '</form>';
             echo '</li>';
 
-            // Calculate the subtotal for each item and add it to the total
+         
             $subtotal = $item['price'] * $item['quantity'];
             $total += $subtotal;
           }

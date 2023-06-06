@@ -1,27 +1,26 @@
 <?php
 include 'db.php';
 
-// Provjera je li proizvod za ažuriranje poslan putem GET parametra
+
 if (isset($_GET['update'])) {
     $productId = $_GET['update'];
 
-    // Dohvaćanje podataka o odabranom proizvodu iz baze
+ 
     $query = "SELECT * FROM products WHERE id = '$productId'";
     $result = mysqli_query($con, $query);
     $product = mysqli_fetch_assoc($result);
 }
 
-// Provjera je li proizvod za brisanje poslan putem GET parametra
+
 if (isset($_GET['delete'])) {
     $productId = $_GET['delete'];
 
-    // Brisanje odabranog proizvoda iz baze
     $query = "DELETE FROM products WHERE id = '$productId'";
     mysqli_query($con, $query);
     echo "Proizvod je uspješno obrisan.";
 }
 
-// Dohvaćanje svih proizvoda iz baze
+
 $query = "SELECT * FROM products";
 $result = mysqli_query($con, $query);
 

@@ -245,3 +245,12 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 2. [https://www.w3schools.com/php/default.asp](https://www.w3schools.com/php/default.asp)
 3. [https://www.w3schools.com/php/php_includes.asp](https://www.w3schools.com/php/php_includes.asp)
 4. [https://www.geeksforgeeks.org/how-to-run-javascript-from-php/](https://www.geeksforgeeks.org/how-to-run-javascript-from-php/)
+
+
+
+**opis skripti**
+
+update.php- stranica u kojoj admin moze uredjivati i dodavati proizvode
+product.php-forma za ispunjavanje podataka novog proizvoda
+admin.php-za prijavu admina
+
