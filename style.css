@@ -26,19 +26,26 @@ h2 {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
 }
+
+
+
+  
 
 /* Header styles */
 .cart-button {
     background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 0.5em 1em;
-    font-size: 1.2em;
-    cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3em 0.6em; /* Adjust the padding values to make the button smaller */
+  font-size: 1em; /* Adjust the font-size value to make the button smaller */
+  cursor: pointer;
+  
 }
 
 .cart-badge {
@@ -52,13 +59,14 @@ img {
 
 /* Items grid styles */
 .items-grid {
+   
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 1em;
     margin-top: 1em;
 }
 
-.item {
+.items-grid .item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,3 +159,70 @@ img {
     cursor: pointer;
     margin-top: 1em;
 }
+
+
+
+.remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+
+
+
+  .dashboard-container {
+  
+    margin: 0 auto;
+    padding: 20px;
+   
+  }
+  
+  h2 {
+    text-align: center;
+  }
+
+
+  .dashboard-container nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .dashboard-container nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .dashboard-container nav ul li {
+    display: inline-block;
+  }
+  
+  .dashboard-container nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dashboard-container nav ul li a:hover {
+    background-color: #555;
+  }
+
+  
+  
+  
+  
+
+
+
+
+
+

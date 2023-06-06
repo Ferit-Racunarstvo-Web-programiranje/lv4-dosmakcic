@@ -1,4 +1,3 @@
-// Get elements
 const cartButton = document.querySelector('.cart-button');
 const cartBadge = document.querySelector('.cart-badge');
 const modal = document.querySelector('.modal');
@@ -39,6 +38,8 @@ function fillItemsGrid() {
     }
 }
 
+
+
 // Adding the .show-modal class to an element will make it visible
 // because it has the CSS property display: block; (which overrides display: none;)
 // See the CSS file for more details.
@@ -49,6 +50,19 @@ function toggleModal() {
 // Call fillItemsGrid function when page loads
 fillItemsGrid();
 
+
+
+
+
+
 // Example of DOM methods for adding event handling
 cartButton.addEventListener('click', toggleModal);
 modalClose.addEventListener('click', toggleModal);
+
+const form = document.getElementById('order-form');
+const buycartButton = document.getElementById('buy-btn-cart');
+
+
+
+
+
